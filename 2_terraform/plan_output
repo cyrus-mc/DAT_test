@@ -1,0 +1,147 @@
+[0m[1mRefreshing Terraform state in-memory prior to plan...[0m
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+[0m
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[32m  [32m+[0m [32maws_elb.elb
+[0m      id:                                     <computed>
+      arn:                                    <computed>
+      availability_zones.#:                   <computed>
+      connection_draining:                    "false"
+      connection_draining_timeout:            "300"
+      cross_zone_load_balancing:              "true"
+      dns_name:                               <computed>
+      health_check.#:                         <computed>
+      idle_timeout:                           "60"
+      instances.#:                            <computed>
+      internal:                               <computed>
+      listener.#:                             "1"
+      listener.3931999347.instance_port:      "8080"
+      listener.3931999347.instance_protocol:  "HTTP"
+      listener.3931999347.lb_port:            "80"
+      listener.3931999347.lb_protocol:        "HTTP"
+      listener.3931999347.ssl_certificate_id: ""
+      name:                                   "sample-elb"
+      security_groups.#:                      <computed>
+      source_security_group:                  <computed>
+      source_security_group_id:               <computed>
+      subnets.#:                              "1"
+      subnets.1628973302:                     "subnet-1234"
+      zone_id:                                <computed>
+[0m
+[0m[32m  [32m+[0m [32maws_elb_attachment.elb[0]
+[0m      id:                                     <computed>
+      elb:                                    "${aws_elb.elb.id}"
+      instance:                               "${element(aws_elb.elb.*.id, count.index)}"
+[0m
+[0m[32m  [32m+[0m [32maws_elb_attachment.elb[1]
+[0m      id:                                     <computed>
+      elb:                                    "${aws_elb.elb.id}"
+      instance:                               "${element(aws_elb.elb.*.id, count.index)}"
+[0m
+[0m[32m  [32m+[0m [32maws_elb_attachment.elb[2]
+[0m      id:                                     <computed>
+      elb:                                    "${aws_elb.elb.id}"
+      instance:                               "${element(aws_elb.elb.*.id, count.index)}"
+[0m
+[0m[32m  [32m+[0m [32maws_instance.instances[0]
+[0m      id:                                     <computed>
+      ami:                                    "ami-e689729e"
+      associate_public_ip_address:            <computed>
+      availability_zone:                      <computed>
+      ebs_block_device.#:                     <computed>
+      ephemeral_block_device.#:               <computed>
+      instance_state:                         <computed>
+      instance_type:                          "t2.micro"
+      ipv6_address_count:                     <computed>
+      ipv6_addresses.#:                       <computed>
+      key_name:                               <computed>
+      network_interface.#:                    <computed>
+      network_interface_id:                   <computed>
+      placement_group:                        <computed>
+      primary_network_interface_id:           <computed>
+      private_dns:                            <computed>
+      private_ip:                             <computed>
+      public_dns:                             <computed>
+      public_ip:                              <computed>
+      root_block_device.#:                    <computed>
+      security_groups.#:                      <computed>
+      source_dest_check:                      "true"
+      subnet_id:                              "subnet-1234"
+      tenancy:                                <computed>
+      volume_tags.%:                          <computed>
+      vpc_security_group_ids.#:               <computed>
+[0m
+[0m[32m  [32m+[0m [32maws_instance.instances[1]
+[0m      id:                                     <computed>
+      ami:                                    "ami-e689729e"
+      associate_public_ip_address:            <computed>
+      availability_zone:                      <computed>
+      ebs_block_device.#:                     <computed>
+      ephemeral_block_device.#:               <computed>
+      instance_state:                         <computed>
+      instance_type:                          "t2.micro"
+      ipv6_address_count:                     <computed>
+      ipv6_addresses.#:                       <computed>
+      key_name:                               <computed>
+      network_interface.#:                    <computed>
+      network_interface_id:                   <computed>
+      placement_group:                        <computed>
+      primary_network_interface_id:           <computed>
+      private_dns:                            <computed>
+      private_ip:                             <computed>
+      public_dns:                             <computed>
+      public_ip:                              <computed>
+      root_block_device.#:                    <computed>
+      security_groups.#:                      <computed>
+      source_dest_check:                      "true"
+      subnet_id:                              "subnet-1234"
+      tenancy:                                <computed>
+      volume_tags.%:                          <computed>
+      vpc_security_group_ids.#:               <computed>
+[0m
+[0m[32m  [32m+[0m [32maws_instance.instances[2]
+[0m      id:                                     <computed>
+      ami:                                    "ami-e689729e"
+      associate_public_ip_address:            <computed>
+      availability_zone:                      <computed>
+      ebs_block_device.#:                     <computed>
+      ephemeral_block_device.#:               <computed>
+      instance_state:                         <computed>
+      instance_type:                          "t2.micro"
+      ipv6_address_count:                     <computed>
+      ipv6_addresses.#:                       <computed>
+      key_name:                               <computed>
+      network_interface.#:                    <computed>
+      network_interface_id:                   <computed>
+      placement_group:                        <computed>
+      primary_network_interface_id:           <computed>
+      private_dns:                            <computed>
+      private_ip:                             <computed>
+      public_dns:                             <computed>
+      public_ip:                              <computed>
+      root_block_device.#:                    <computed>
+      security_groups.#:                      <computed>
+      source_dest_check:                      "true"
+      subnet_id:                              "subnet-1234"
+      tenancy:                                <computed>
+      volume_tags.%:                          <computed>
+      vpc_security_group_ids.#:               <computed>
+[0m
+[0m
+[0m[1mPlan:[0m 7 to add, 0 to change, 0 to destroy.[0m
+
+------------------------------------------------------------------------
+
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+
