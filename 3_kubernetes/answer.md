@@ -67,7 +67,6 @@ _You have the above Kubernetes deployment. At a high level describe what the abo
 3. The node selection is based on a matched expression of: stateless with a default namespace
 4. Container ports 8080 are open to send and accept traffic
 5. The container specs set the name, memory, ports, cpu, mounts such as `/config`
-6. The node may not be reachable because of a networking issue (route to node). 
 
 **4 Reasons the config causes a PENDING state**
 
@@ -75,3 +74,4 @@ _You have the above Kubernetes deployment. At a high level describe what the abo
 2. Resources requested could be greater than the amount of CPU and Memory remaining on the node. 
 3. The namespace you want to use may not be registered with your AWS/cloud provider account or the namespace is in an invalid format. 
 4. Using the beta api version could cause a pending state issue. 
+5. The node may not be reachable because of a networking issue (route to node). 
